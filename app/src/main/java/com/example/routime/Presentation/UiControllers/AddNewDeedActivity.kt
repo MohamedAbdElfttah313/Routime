@@ -39,6 +39,7 @@ import java.util.Date
 
 class AddNewDeedActivity : AppCompatActivity() {
 
+
     private lateinit var xmlView : ActivityAddNewDeedBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
