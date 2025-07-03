@@ -37,7 +37,7 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.launch
 import java.util.Calendar
 
-//TODO(Calendar+Icons Selections+ clean Filter + ASC DESC sorting)
+
 
 class SearchDeedFragment : Fragment() {
     private lateinit var xmlViews : FragmentSearchDeedBinding

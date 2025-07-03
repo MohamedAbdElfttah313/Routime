@@ -16,8 +16,8 @@ data class Deed(
     @ColumnInfo(name = "start_time") val startTime : String,
     @ColumnInfo(name = "time_spent") val timeSpent : Int,
     @ColumnInfo(name = "category") val category : String,
-    @ColumnInfo(name = "icon_id") val iconId : Int = R.drawable.outline_box_24,    //TODO(Replace with default icon id);
-    @ColumnInfo(name = "mood_emoji_id") val emojiId : String= Emojis.HAPPY.code, //TODO(Replace with default icon id);
+    @ColumnInfo(name = "icon_id") val iconId : Int = R.drawable.outline_box_24,
+    @ColumnInfo(name = "mood_emoji_id") val emojiId : String= Emojis.HAPPY.code,
     @ColumnInfo(name = "done") val done : Boolean = true,
     @ColumnInfo(name = "comment") val comment : String = "",
     @PrimaryKey(autoGenerate = true) val id : Long? = null

@@ -27,7 +27,7 @@ import kotlinx.coroutines.withContext
 
 class ShowDeedActivity : AppCompatActivity() {
 
-    //TODO( Edit )
+
 
     private lateinit var xmlView : ActivityShowDeedBinding
     override fun onCreate(savedInstanceState: Bundle?) {
