@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@drawable/main_background_gradiant"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Presentation.UiControllers.TodayDeedFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Today"
+        android:layout_marginHorizontal="28dp"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginHorizontal="28dp"
+
+        android:background="@drawable/rounded_background_16dp"
+        android:backgroundTint="#26000000"
+        android:orientation="vertical"
+        android:padding="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Today's Deeds"
+                android:textSize="14sp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/TodayDeedCountTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end"
+
+                android:textSize="14sp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="3"
+                android:textColor="#80FFFFFF" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:textSize="14sp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Total Time Spent"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/TodayDeedTimeSpentTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textSize="14sp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="320 min"
+                android:textColor="#80FFFFFF" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/TodayDeedDoneProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:progress="60" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/TodayDeedDonePercentTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="7dp"
+            android:text="60% Of Deeds Completed"
+            android:textColor="#E1D6E7" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginHorizontal="28dp"
+
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Total Deeds"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/SortOptionTodayDeedTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_medium"
+            android:drawableEnd="@drawable/ic_sort"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/white"
+            android:gravity="end|center"
+            android:text="Sort"
+            android:textColor="@color/white" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/TodayDeedIListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat3" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/NoDeedTodayInfoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="222dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginHorizontal="28dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat3"
+        tools:layout_editor_absoluteX="28dp" >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/questioned_svg"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This 'Add Deed' Button Won't Bite . . ."
+            android:gravity="center"
+            android:layout_marginTop="14dp"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:fontFamily="casual"
+            android:textColor="#FFFFFF"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/MainAddDeedButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="35dp"
+
+
+        android:layout_marginTop="14dp"
+        android:background="@drawable/stroked_button_background_8dp"
+        android:backgroundTint="#26FFFFFF"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/TodayDeedIListRecyclerView"
+        app:layout_constraintStart_toStartOf="@+id/TodayDeedIListRecyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/TodayDeedIListRecyclerView">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/baseline_add_circle_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="#E1D9E6"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="Add Deed"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

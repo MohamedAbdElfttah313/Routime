@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/PlainStringCheckerImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/outline_circle_24"
+        android:tint="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginStart="7dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/PlainStringTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Work"
+        android:layout_marginVertical="2dp"
+        android:layout_gravity="center"
+        android:gravity="center|start"
+        android:paddingHorizontal="4dp"
+        android:fontFamily="@font/roboto"
+        android:layout_marginStart="14dp"
+        android:textColor="@color/black"
+        android:textSize="13sp"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

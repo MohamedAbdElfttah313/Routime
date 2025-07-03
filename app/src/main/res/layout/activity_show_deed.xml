@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@drawable/main_background_gradiant"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Presentation.UiControllers.ShowDeedActivity">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardElevation="0dp"
+            android:layout_marginTop="42dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/BackButtonImageView"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/outline_arrow_forward_ios_24"
+                    android:rotation="180"
+                    android:layout_marginStart="24dp"/>
+
+                <!-- Header Section -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:padding="24dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="12dp"
+                            app:cardBackgroundColor="@color/white_20"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ShowDeedIconTextView"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_book"
+                                app:tint="@color/white" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/ShowDeedTitleTextView"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/subject_title"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/ShowDeedCategoryPlaceholderTextView"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/study_session"
+                                android:textColor="@color/purple_100"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/btn_more_options"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ripple_white_20"
+                        android:contentDescription="@string/more_options"
+                        android:src="@drawable/ic_more"
+                        app:tint="@color/white" />
+
+                </RelativeLayout>
+
+                <!-- Content Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Time Spent Section -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            app:cardBackgroundColor="@color/white_40"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="16dp"
+                                android:paddingVertical="8dp">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:src="@drawable/ic_clock"
+                                    app:tint="@color/black" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/ShowDeedTimeSpentTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/time_spent_value"
+                                    android:textColor="@color/gray_900"
+                                    android:textSize="26sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/time_spent"
+                            android:textColor="@color/gray_200"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <!-- Separator -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/gray_200" />
+
+                    <!-- Session Details -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:orientation="vertical">
+
+                        <!-- Category Row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:src="@drawable/ic_category"
+                                    android:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/category"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/roboto_medium" />
+
+                            </LinearLayout>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="@color/white_20"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/ShowDeedCategoryTextView"
+                                    android:layout_width="wrap_content"
+                                    android:maxWidth="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="12dp"
+                                    android:gravity="center"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:paddingVertical="4dp"
+                                    android:text="@string/study_category"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                     />
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:src="@drawable/ic_mood"
+                                    android:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/mood"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/roboto_medium" />
+
+                            </LinearLayout>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="@color/white_40"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/ShowDeedMoodTextView"
+                                    android:layout_width="wrap_content"
+                                    android:maxWidth="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="12dp"
+                                    android:gravity="center"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:paddingVertical="4dp"
+                                    android:text="Happy"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+
+                        <!-- Date Row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:src="@drawable/ic_calendar"
+                                    android:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/date"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp"
+                                     />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/ShowDeedStartTimeTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/date_value"
+                                android:textColor="@color/gray_900"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Separator -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@color/gray_200" />
+
+                    <!-- Notes Section -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginEnd="8dp"
+                                android:src="@drawable/ic_message_square"
+                                android:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/activity_description"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/roboto_medium" />
+
+                        </LinearLayout>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white_40"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp">
+
+                            <TextView
+                                android:id="@+id/ShowDeedDescriptionTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:lineSpacingExtra="4dp"
+                                android:padding="16dp"
+                                android:text="@string/not_found_content"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <!-- Action Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="14dp"
+                        android:weightSum="2">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/EditDeedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:paddingHorizontal="24dp"
+                            android:background="@drawable/button_edit_gradient"
+                            android:drawableStart="@drawable/ic_edit"
+                            android:drawableTint="@color/white"
+                            android:text="@string/edit"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/DeleteDeedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+
+                            android:background="@drawable/stroked_button_background_8dp"
+                            android:backgroundTint="@color/white_20"
+                            android:drawableStart="@drawable/ic_recycle_bin"
+                            android:paddingHorizontal="24dp"
+
+                            android:drawableTint="@color/white"
+
+                            android:text="@string/delete"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
