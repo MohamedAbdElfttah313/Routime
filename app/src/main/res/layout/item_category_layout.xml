@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginHorizontal="4dp"
+    android:background="@drawable/rounded_background_16dp"
+    android:backgroundTint="@color/black_opa_10"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/SingleCategoryIconImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_language"
+        android:textSize="24sp"
+        android:layout_marginEnd="12dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/SingleCategoryNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Charity"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/white_80" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/SingleCategoryTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default"
+            android:textSize="10sp"
+            android:textColor="@color/gray_600"
+            android:background="@drawable/rounded_background_4dp"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
+            android:layout_marginTop="4dp"
+            android:visibility="visible" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/SingleCategoryEditImageButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+
+        android:src="@drawable/ic_edit"
+        android:background="@drawable/rounded_background_stroked_20dp"
+        android:tint="@color/gray_500"
+        android:layout_marginEnd="4dp" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/SingleCategoryDeleteImageButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:padding="20dp"
+        android:src="@drawable/ic_recycle_bin"
+        android:background="@drawable/rounded_background_stroked_20dp"
+        app:tint="@color/red_500"
+        android:visibility="visible" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

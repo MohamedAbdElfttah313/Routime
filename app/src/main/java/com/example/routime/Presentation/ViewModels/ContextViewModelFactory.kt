@@ -3,6 +3,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.routime.Presentation.ViewModels.AddNewDeedViewModel
 import com.example.routime.Presentation.ViewModels.SearchDeedViewModel
+import com.example.routime.Presentation.ViewModels.SettingsViewModel
 import com.example.routime.Presentation.ViewModels.ShowDeedViewModel
 import com.example.routime.Presentation.ViewModels.TodayDeedViewModel
 import com.example.routime.Screen
@@ -30,6 +31,11 @@ class ContextViewModelFactory(
         if (modelClass.isAssignableFrom(ShowDeedViewModel::class.java)){
             @Suppress("UNCHECKED_CAST")
             return ShowDeedViewModel(context) as T
+        }
+
+        if (modelClass.isAssignableFrom(SettingsViewModel::class.java)){
+            @Suppress("UNCHECKED_CAST")
+            return SettingsViewModel(context) as T
         }
 
         throw IllegalArgumentException("Unknown ViewModel class")

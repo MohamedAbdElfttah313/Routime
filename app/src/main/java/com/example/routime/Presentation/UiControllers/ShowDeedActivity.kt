@@ -66,7 +66,7 @@ class ShowDeedActivity : AppCompatActivity() {
 
         xmlView.DeleteDeedButton.setOnClickListener {
             DeleteConfirmationDialogFragment().apply {
-                setOnCancelPressed {
+                setOnDeletePressed {
                     lifecycleScope.launch {
                         withContext(Dispatchers.IO){
                             deed?.let(showDeedViewModel::deleteDeed)

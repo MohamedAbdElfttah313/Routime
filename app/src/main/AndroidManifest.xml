@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -26,21 +30,14 @@
         <activity
             android:name=".Presentation.UiControllers.ShowDeedActivity"
             android:exported="false" />
-        <activity
-            android:name=".Presentation.UiControllers.SearchDeedFragment"
-            android:exported="false" />
+
         <activity
             android:name=".Presentation.UiControllers.AddNewDeedActivity"
             android:exported="false" />
-        <activity
-            android:name=".Presentation.UiControllers.TodayDeedFragment"
-            android:exported="true">
-          <!--  <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
+        <service
+            android:name=".Presentation.Services.HourlyReminderService"
+          />
 
         <meta-data
             android:name="preloaded_fonts"

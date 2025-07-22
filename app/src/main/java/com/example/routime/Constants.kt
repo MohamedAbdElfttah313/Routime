@@ -1,5 +1,49 @@
 package com.example.routime
 
+
+object Constants {
+
+    //Request Codes
+    const val REMINDER_SERVICE_REQUEST_CODE = 101
+    const val PENDING_INTENT_REQUEST_CODE = 111
+
+    //Notification Channels
+    const val CHANNEL_ID_DEFAULT = "CHANNEL_ID_DEFAULT"
+    const val CHANNEL_ID_SOUND = "CHANNEL_ID_SOUND"
+    const val CHANNEL_ID_SOUND_VIBRATION = "CHANNEL_ID_SOUND_VIBRATION"
+
+    //Reminder Preferences
+    const val SHARED_PREF_NAME = "ROUTIME_SHARED_PREF"
+    const val REMINDER_ENABLED = "REMINDER_ENABLED"
+    const val REMINDER_FREQUENCY = "REMINDER_FREQUENCY"
+    const val REMINDER_START_TIME = "REMINDER_START_TIME"
+    const val REMINDER_END_TIME = "REMINDER_END_TIME"
+    const val REMINDER_WEEKDAYS_ONLY = "REMINDER_WEEKDAYS_ONLY"
+    const val REMINDER_NOTIFICATION_SOUND = "REMINDER_NOTIFICATION_SOUND"
+    const val REMINDER_NOTIFICATION_VIBRATE = "REMINDER_NOTIFICATION_VIBRATE"
+
+    //Inactivity Preferences
+    const val INACTIVITY_REMINDER_ENABLED = "INACTIVITY_REMINDER_ENABLED"
+    const val INACTIVITY_REMINDER_POST_TIME = "INACTIVITY_REMINDER_POST_TIME"
+    const val INACTIVITY_REMINDER_MESSAGE = "INACTIVITY_REMINDER_MESSAGE"
+    const val INACTIVITY_REMINDER_SOUND_ENABLED = "INACTIVITY_REMINDER_SOUND_ENABLED"
+
+    //External Storage File Paths
+    const val SAVED_PICTURES_PATH = "SavedPictures"
+    const val SAVED_VIDEOS_PATH = "SavedVideos"
+    const val SAVED_DOCS_PATH = "SavedDocuments"
+    const val SAVED_AUDIO_PATH = "SavedAudios"
+
+}
+
+enum class FileType{
+    Picture,
+    Video,
+    Document,
+    Audio,
+    Undefined
+}
+
 enum class Emojis(val code : String){
     HAPPY("\uD83D\uDE00") ,
     SAD("\uD83D\uDE1E"),
@@ -33,9 +77,9 @@ enum class CategoryEnum(val resId : Int){
 }
 
 enum class ExtrasNames{
-    PARCELABLE_DEED
+    PARCELABLE_DEED,
+    FLAG_SHOULD_SHOW_REMINDER_OVERLAY
 }
-
 sealed interface Screen{
     data object TodayDeed : Screen
     data object AddDeed : Screen
