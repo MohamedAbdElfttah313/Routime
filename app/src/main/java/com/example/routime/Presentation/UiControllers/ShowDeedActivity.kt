@@ -10,12 +10,15 @@ import android.view.WindowInsetsController
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.routime.CategoryEnum
 import com.example.routime.Data.Models.Deed
 import com.example.routime.ExtrasNames
+import com.example.routime.FileType
+import com.example.routime.Helpers.FileProviderHelper
 import com.example.routime.Presentation.UiDialogs.DeleteConfirmationDialogFragment
 import com.example.routime.Presentation.ViewModels.ShowDeedViewModel
 import com.example.routime.R
@@ -58,7 +61,17 @@ class ShowDeedActivity : AppCompatActivity() {
         }
 
         val deed = intent.getParcelableExtra(ExtrasNames.PARCELABLE_DEED.name) as? Deed
-        deed?.let(::populateDeedInfo)
+        deed?.let { mDeed->
+            populateDeedInfo(mDeed)
+            if (mDeed.attachmentUri.isNotBlank()){
+                xmlView.ShowDeedAttachmentTextView.setOnClickListener {
+                    val attachmentIntent = Intent(Intent.ACTION_VIEW,mDeed.attachmentUri.toUri()).apply {
+                        flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                    }
+                    startActivity(Intent.createChooser(attachmentIntent,"Content View"))
+                }
+            }
+        }
 
         val showDeedViewModel : ShowDeedViewModel by viewModels {
             ContextViewModelFactory(applicationContext)
@@ -69,7 +82,13 @@ class ShowDeedActivity : AppCompatActivity() {
                 setOnDeletePressed {
                     lifecycleScope.launch {
                         withContext(Dispatchers.IO){
-                            deed?.let(showDeedViewModel::deleteDeed)
+                            deed?.let{
+                                showDeedViewModel.deleteDeed(it)
+                                if (it.attachmentUri.isNotBlank()){
+                                    FileProviderHelper(applicationContext).deleteFile(it.attachmentDisplayName,
+                                        FileType.valueOf(it.attachmentType))
+                                }
+                            }
                         }
                         finish()
                     }
@@ -98,6 +117,21 @@ class ShowDeedActivity : AppCompatActivity() {
             ShowDeedStartTimeTextView.text = Utils.formatTimeForDataBase(
                 Utils.parseTimeReturnedFromDataBase(deed.startTime),
                 "HH:mm MMMM d, yyyy")
+            ShowDeedProgressTextView.text = "Progress : ${deed.progress}%"
+
+            if (deed.attachmentUri.isNotBlank()){
+                ShowDeedAttachmentTextView.text = deed.attachmentDisplayName
+                val fileTypeIcon= when(FileType.valueOf(deed.attachmentType)){
+                    FileType.Picture -> R.drawable.ic_image
+                    FileType.Video -> R.drawable.ic_video
+                    FileType.Document -> R.drawable.ic_document
+                    FileType.Audio -> R.drawable.ic_volume
+                    FileType.Undefined -> R.drawable.ic_help
+                }
+                ShowDeedAttachmentTextView.setCompoundDrawablesWithIntrinsicBounds(fileTypeIcon,0,0,0)
+            }else{
+                ShowDeedAttachmentTextView.text = "No Attachment Found"
+            }
         }
     }
 

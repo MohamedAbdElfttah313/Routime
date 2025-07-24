@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../NEW%20LAP/AppData/Local/Android/Sdk/icons/material/materialsymbolsoutlined/help/outline_help_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../NEW%20LAP/AppData/Local/Android/Sdk/icons/material/materialsymbolsoutlined/attachment/outline_attachment_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -34,7 +34,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_help" />
+                            <entry key="outputName" value="ic_small_attachment" />
                             <entry key="sourceFile" value="D:\Images\SVG\ic_network.svg" />
                           </map>
                         </option>

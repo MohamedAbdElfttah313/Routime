@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.routime.Data.Models.Category
 import com.example.routime.Data.Models.Deed
 
-@Database(entities = [Deed::class,Category::class], version = 1)
+@Database(entities = [Deed::class,Category::class], version = 2)
 abstract class RoutimeDataBase : RoomDatabase() {
     abstract fun DeedDao() : DeedDao
     abstract fun CategoryDao() : CategoryDao
@@ -23,7 +23,8 @@ abstract class RoutimeDataBase : RoomDatabase() {
                     context.applicationContext,
                     RoutimeDataBase::class.java,
                     "APPLICATION_DB"
-                ).build()
+                ).fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 instance
             }

@@ -81,6 +81,10 @@ class TodayDeedFragment : Fragment() {
     private fun updateOverViewLayout(it: List<Deed>) {
         xmlViews.TodayDeedCountTextView.text = it.size.toString()
         xmlViews.TodayDeedTimeSpentTextView.text = it.sumOf { it.timeSpent }.toString()+" min"
+
+        val totalProgressValue = if(it.isEmpty()) 0f else (it.sumOf { it.progress } / it.size).toFloat()
+        xmlViews.TodayDeedDoneProgress.value = totalProgressValue
+        xmlViews.TodayDeedProgressTextView.text = "Progress: ${totalProgressValue.toInt()}%"
         xmlViews.TodayDeedDonePercentTextView.text = "${it.count { it.done }}/${it.size} Of Deeds Completed"
     }
 

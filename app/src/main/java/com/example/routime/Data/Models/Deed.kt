@@ -16,9 +16,12 @@ data class Deed(
     @ColumnInfo(name = "start_time") val startTime : String,
     @ColumnInfo(name = "time_spent") val timeSpent : Int,
     @ColumnInfo(name = "category") val category : String,
+    @ColumnInfo(name = "progress") val progress : Int,
+    @ColumnInfo(name = "done") val done : Boolean,
+    @ColumnInfo(name = "attachment_uri") val attachmentUri : String,
+    @ColumnInfo(name = "attachment_type") val attachmentType : String,
+    @ColumnInfo(name = "attachment_display_name") val attachmentDisplayName : String,
     @ColumnInfo(name = "icon_id") val iconId : Int = R.drawable.outline_box_24,
     @ColumnInfo(name = "mood_emoji_id") val emojiId : String= Emojis.HAPPY.code,
-    @ColumnInfo(name = "done") val done : Boolean = true,
-    @ColumnInfo(name = "comment") val comment : String = "",
     @PrimaryKey(autoGenerate = true) val id : Long? = null
 ):Parcelable

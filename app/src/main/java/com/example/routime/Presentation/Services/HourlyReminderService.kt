@@ -115,9 +115,8 @@ class HourlyReminderService : Service() {
             }
 
             alarmManager.set(AlarmManager.RTC, calender.timeInMillis, reminderServicePendingIntent)
-
             sharedPreference.edit().putInt("TEST_COUNTER",counterTest+1).apply()
-
+            if (!shouldShowReminderOverlay) stopSelf()
 
 
         }else{
